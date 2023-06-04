@@ -1,0 +1,19 @@
+function taskSelection(tasks, maxTime) {
+  tasks.sort((a, b) => a - b);
+  let count = 0;
+  let totalTime = 0;
+
+  for (let task of tasks) {
+    totalTime += task;
+    if (totalTime <= maxTime) {
+      count++;
+    } else {
+      break;
+    }
+  }
+
+  return count;
+}
+
+let tasks = [3, 2, 1, 4, 5];
+let maxTime = 9;
